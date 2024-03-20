@@ -1,0 +1,140 @@
+/* some colors you may find useful:
+  #115ff4
+  #060ce9
+  #28a200
+  #8d2ab5
+  #74119c
+*/
+
+#restartBtn {
+  position: fixed;
+  top: 40px;
+  left: 10px;
+  z-index: 1000;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#restartBtn:hover {
+  background-color: #45a049;
+}
+
+
+body {
+  text-align: center;
+  background-color: #115ff4;
+  font-weight: bold;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 0 auto; /* Center the table horizontally */
+  margin-top: 200px;
+}
+
+
+thead tr, tbody tr {
+  display: flex;
+}
+
+
+thead td, tbody td {
+  flex: 1;
+  padding: 8px;
+  text-transform: uppercase;
+  }
+
+tbody tr {
+  flex-wrap: wrap;
+  
+}
+
+tbody td {
+  width: 16.666%; /* For 6 categories */
+  height: 150px;
+  padding: 8px;
+  border: 2px solid #000000;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  
+  
+}
+.dollar-amount {
+  position: absolute; /* Position the dollar amount */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the dollar amount */
+  font-size: 1.5em; /* Larger text size */
+  
+}
+
+.clue-container {
+  position: relative; /* Add relative positioning for absolute positioning */
+  height: 100%; /* Set height to 100% */
+}
+
+.clue-text {
+  position: absolute; /* Position the clue */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width:fit-content; /* Take up full width */
+  height: fit-content; /* Take up full height */
+  padding: 8px; /* Add padding */
+  box-sizing: border-box; /* Include padding in width and height */
+  display: none; /* Hide initially */
+}
+
+/* Show the clue text when the dollar amount is clicked */
+.dollar-amount.clicked + .clue-container .clue-text {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #fff;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#jeopardy-game {
+  display: none; /* Hide the game content initially */
+}
+
+.game-logo {
+  width: 350px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  position: absolute; /* Position the image absolutely */
+  top: 20px; /* Adjust top positioning as needed */
+  left: 50%; /* Center the image horizontally */
+  transform: translateX(-50%); /* Adjust horizontal centering */
+}
